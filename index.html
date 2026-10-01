@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>For Divyanshi 💖</title>
+
+  <!-- Cute font -->
+  <link href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Poppins:wght@300;500&display=swap" rel="stylesheet">
+
+  <style>
+    body {
+      margin: 0;
+      height: 100vh;
+      background: linear-gradient(135deg, #ffd1dc, #ffe6f0);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-family: 'Poppins', sans-serif;
+    }
+
+    .container {
+      background: white;
+      padding: 40px;
+      border-radius: 20px;
+      box-shadow: 0 20px 40px rgba(0,0,0,0.15);
+      text-align: center;
+      width: 320px;
+      transition: all 0.5s ease;
+    }
+
+    h1, h2, p {
+      margin-bottom: 20px;
+    }
+
+    button {
+      padding: 10px 22px;
+      border: none;
+      border-radius: 30px;
+      background: #ff4d6d;
+      color: white;
+      font-size: 16px;
+      cursor: pointer;
+      margin: 5px;
+      transition: transform 0.2s, background 0.2s;
+    }
+
+    button:hover {
+      transform: scale(1.05);
+      background: #ff335a;
+    }
+
+    .hidden {
+      display: none;
+    }
+
+    /* Envelope */
+    .envelope {
+      width: 200px;
+      height: 120px;
+      background: #ffb3c6;
+      position: relative;
+      margin: auto;
+      border-radius: 10px;
+      cursor: pointer;
+    }
+
+    .envelope::before {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 0;
+      height: 0;
+      border-left: 100px solid transparent;
+      border-right: 100px solid transparent;
+      border-top: 60px solid #ff8fab;
+    }
+
+    /* Card */
+    .card {
+      background: #fff0f6;
+      padding: 30px;
+      border-radius: 15px;
+    }
+
+    .paper {
+      background: white;
+      padding: 20px;
+      border-radius: 10px;
+      cursor: pointer;
+      box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+    }
+
+    .valentine-text {
+      font-family: 'Great Vibes', cursive;
+      font-size: 36px;
+      color: #ff2e63;
+      animation: pop 0.8s ease forwards;
+    }
+
+    @keyframes pop {
+      0% {
+        transform: scale(0.5);
+        opacity: 0;
+      }
+      100% {
+        transform: scale(1);
+        opacity: 1;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- STEP 1 -->
+  <div class="container" id="step1">
+    <h2>Hi 💕</h2>
+    <p>This website is for my girlfriend Divyanshi</p>
+    <p>Are you Divyanshi?</p>
+    <button onclick="yesDivyanshi()">Yes</button>
+    <button onclick="notDivyanshi()">No</button>
+  </div>
+
+  <!-- STEP 2 -->
+  <div class="container hidden" id="step2">
+    <div class="envelope" onclick="openEnvelope()"></div>
+    <p style="margin-top: 20px;">Shiprisht has a question for you 💌</p>
+    <button onclick="openEnvelope()">Proceed?</button>
+  </div>
+
+  <!-- STEP 3 -->
+  <div class="container hidden" id="step3">
+    <div class="card">
+      <p>Tap the paper 📜</p>
+      <div class="paper" onclick="showQuestion()">
+        Click me 💕
+      </div>
+    </div>
+  </div>
+
+  <!-- STEP 4 -->
+  <div class="container hidden" id="step4">
+    <div class="valentine-text">
+      Will you be my Valentine? 💖
+    </div>
+  </div>
+
+  <script>
+    function yesDivyanshi() {
+      document.getElementById("step1").classList.add("hidden");
+      document.getElementById("step2").classList.remove("hidden");
+    }
+
+    function notDivyanshi() {
+      document.body.innerHTML = "<h1 style='font-family:Poppins;text-align:center;'>Sorry not for you 😤<br>Get off right now.</h1>";
+    }
+
+    function openEnvelope() {
+      document.getElementById("step2").classList.add("hidden");
+      document.getElementById("step3").classList.remove("hidden");
+    }
+
+    function showQuestion() {
+      document.getElementById("step3").classList.add("hidden");
+      document.getElementById("step4").classList.remove("hidden");
+    }
+  </script>
+
+</body>
+</html>
